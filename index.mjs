@@ -4,9 +4,11 @@ import client from './src/db/connect.mjs'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import session from 'express-session'
 
 //IMPORT ROUTERS
 
+import getProfileinfos from './controllers/getProfileInfos.mjs'
 import loginRouter from './src/api/auth/login.mjs'
 import registerRouter from './src/api/auth/register.mjs'
 import logoutRouter from './src/api/auth/logout.mjs'
@@ -36,6 +38,10 @@ app.use(cors())
 app.use('/', loginRouter)
 app.use('/', registerRouter)
 app.use('/', auth, logoutRouter)
+
+// REQUEST
+//POST 
+app.post('/insertProfileInfos', auth, getProfileinfos)
 
 app.get('/', (req, res) => {
     res.sendStatus(200)

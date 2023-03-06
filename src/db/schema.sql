@@ -1,6 +1,7 @@
 CREATE TABLE "profile"(
     "id" SERIAL NOT NULL,
     "name" VARCHAR(255) NOT NULL,
+    "lastname" VARCHAR(255) NOT NULL, 
     "email" VARCHAR(255) NOT NULL,
     "phone" VARCHAR(255) NOT NULL,
     "adress" VARCHAR(255) NOT NULL,
