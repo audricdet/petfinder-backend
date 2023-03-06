@@ -8,7 +8,7 @@ import session from 'express-session'
 
 //IMPORT ROUTERS
 
-import getProfileinfos from './controllers/getProfileInfos.mjs'
+import insertProfileinfos from './controllers/insertProfileInfos.mjs'
 import loginRouter from './src/api/auth/login.mjs'
 import registerRouter from './src/api/auth/register.mjs'
 import logoutRouter from './src/api/auth/logout.mjs'
@@ -41,7 +41,7 @@ app.use('/', auth, logoutRouter)
 
 // REQUEST
 //POST 
-app.post('/insertProfileInfos', auth, getProfileinfos)
+app.post('/insertProfileInfos', auth, insertProfileinfos)
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
