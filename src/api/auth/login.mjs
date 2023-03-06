@@ -64,9 +64,9 @@ const login = async (request, response) => {
             secure: process.env.NODE_ENV === "production",
         })
         .status(200)
-        .send(`Logged in successfully with email ${email}`);
+        .send(`Logged in successfully with email ${user}`);
 
-        request.session.userId = user.id;
+        
 };
 
 loginRouter.post('/login', login)
