@@ -9,6 +9,6 @@ const logout = (request, response) => {
         .json({ message: "Successfully logged out" });
 };
 
-loginRouter.post('/logout', logout)
+logoutRouter.post('/logout', logout)
 
 export default logoutRouter

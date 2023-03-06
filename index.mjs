@@ -35,7 +35,7 @@ app.use(cors())
 //CLASSIC 
 app.use('/', loginRouter)
 app.use('/', registerRouter)
-app.use('/', logoutRouter)
+app.use('/', auth, logoutRouter)
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
