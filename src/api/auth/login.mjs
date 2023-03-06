@@ -65,6 +65,8 @@ const login = async (request, response) => {
         })
         .status(200)
         .send(`Logged in successfully with email ${email}`);
+
+        request.session.userId = user.id;
 };
 
 loginRouter.post('/login', login)
