@@ -8,13 +8,13 @@ CREATE TABLE "profile"(
 );
 ALTER TABLE
     "profile" ADD PRIMARY KEY("id");
-CREATE TABLE "user"(
+CREATE TABLE "users"(
     "id" SERIAL NOT NULL,
     "email" VARCHAR(255) NOT NULL,
     "password" VARCHAR(255) NOT NULL
 );
 ALTER TABLE
-    "user" ADD PRIMARY KEY("id");
+    "users" ADD PRIMARY KEY("id");
 CREATE TABLE "category"(
     "id" SERIAL NOT NULL,
     "name" VARCHAR(255) NOT NULL
@@ -45,4 +45,4 @@ ALTER TABLE
 ALTER TABLE
     "post" ADD CONSTRAINT "post_category_id_foreign" FOREIGN KEY("category_id") REFERENCES "category"("id");
 ALTER TABLE
-    "profile" ADD CONSTRAINT "profile_user_id_foreign" FOREIGN KEY("user_id") REFERENCES "user"("id");
+    "profile" ADD CONSTRAINT "profile_user_id_foreign" FOREIGN KEY("user_id") REFERENCES "users"("id");

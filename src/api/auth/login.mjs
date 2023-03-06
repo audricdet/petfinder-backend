@@ -14,7 +14,7 @@ const login = async (request, response) => {
     // Write a SQL query to retrieve the user with the given email address
 
     // Execute the SQL query
-    const result = await client.query("SELECT * FROM user WHERE email = $1", [
+    const result = await client.query("SELECT * FROM users WHERE email = $1", [
         email,
     ]);
 

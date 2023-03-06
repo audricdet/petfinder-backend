@@ -14,7 +14,7 @@ const register = async (request, response) => {
 
     // Vérifiez si l'email existe déjà en effectuant une requête SELECT
     const existingUser = await client.query(
-        "SELECT * FROM user WHERE email = $1",
+        "SELECT * FROM users WHERE email = $1",
         [email]
     );
 
@@ -28,7 +28,7 @@ const register = async (request, response) => {
 
     // Write a SQL query to insert the new user into the database
     const result = await client.query(
-        "INSERT INTO user (email, password) VALUES ($1, $2) RETURNING *",
+        "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
         [email, hashedPassword]
     );
 
