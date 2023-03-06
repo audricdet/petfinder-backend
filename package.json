@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.21",
+    "pg": "^8.9.0"
+  },
+  "name": "petfinder-backend",
+  "description": "An application to post missing pet alert",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/audricdet/petfinder-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/audricdet/petfinder-backend/issues"
+  },
+  "homepage": "https://github.com/audricdet/petfinder-backend#readme"
+}
