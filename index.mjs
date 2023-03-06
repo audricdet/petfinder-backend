@@ -9,9 +9,11 @@ import cors from 'cors'
 
 import loginRouter from './src/api/auth/login.mjs'
 import registerRouter from './src/api/auth/register.mjs'
+import logoutRouter from './src/api/auth/logout.mjs'
 
 // IMPORT MIDDLEWARE
 import auth from './src/middleware/verifyToken.mjs'
+
 
 //IMPORT CONTROLLERS
 
@@ -33,6 +35,7 @@ app.use(cors())
 //CLASSIC 
 app.use('/', loginRouter)
 app.use('/', registerRouter)
+app.use('/', logoutRouter)
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
