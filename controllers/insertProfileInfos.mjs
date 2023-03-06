@@ -1,5 +1,5 @@
 import client from "../src/db/connect.mjs";
-
+import session from "express-session";
 
 const insertProfileInfos = async (request, response) => {
     const userId = request.session.userId; // Récupère l'ID de l'utilisateur connecté depuis la session
