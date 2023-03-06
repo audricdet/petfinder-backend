@@ -64,7 +64,7 @@ const login = async (request, response) => {
             secure: process.env.NODE_ENV === "production",
         })
         .status(200)
-        .send(`Logged in successfully with email ${user}`);
+        .json(user);
 
         
 };
