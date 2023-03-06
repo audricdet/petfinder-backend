@@ -1,7 +1,5 @@
-import * as dotenv from 'dotenv'
 import pkg from 'pg';
 
-dotenv.config()
 const { Client } = pkg;
 
 
