@@ -8,7 +8,7 @@ import session from 'express-session'
 
 //IMPORT ROUTERS
 
-import insertProfileinfos from './controllers/insertProfileInfos.mjs'
+
 import loginRouter from './src/api/auth/login.mjs'
 import registerRouter from './src/api/auth/register.mjs'
 import logoutRouter from './src/api/auth/logout.mjs'
@@ -18,7 +18,8 @@ import auth from './src/middleware/verifyToken.mjs'
 
 
 //IMPORT CONTROLLERS
-
+import insertProfileinfos from './controllers/insertProfileInfos.mjs'
+import getProfileInfos from './controllers/getProfileInfos.mjs'
 
 const app = express() 
 const PORT = 3000
@@ -47,6 +48,9 @@ app.use('/', auth, logoutRouter)
 // REQUEST
 //POST 
 app.post('/insertProfileInfos', auth, insertProfileinfos)
+
+//GET
+app.get("/profile/:id", auth, getProfileInfos)
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
