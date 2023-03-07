@@ -50,7 +50,7 @@ app.use('/', auth, logoutRouter)
 // REQUEST
 //POST 
 app.post('/insertProfileInfos', auth, insertProfileinfos)
-app.post('/insertPost', auth, insertPost)
+app.post('/profile/:id/insertPost', auth, insertPost)
 
 //GET
 app.get("/profile/:id", auth, getProfileInfos)
