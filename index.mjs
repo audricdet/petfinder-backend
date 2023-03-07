@@ -21,6 +21,7 @@ import auth from './src/middleware/verifyToken.mjs'
 import insertProfileinfos from './controllers/insertProfileInfos.mjs'
 import getProfileInfos from './controllers/getProfileInfos.mjs'
 import insertPost from './controllers/insertPost.mjs'
+import getAllPosts from './controllers/getAllPosts.mjs'
 
 const app = express() 
 const PORT = 3000
@@ -53,6 +54,7 @@ app.post('/insertPost', auth, insertPost)
 
 //GET
 app.get("/profile/:id", auth, getProfileInfos)
+app.get('/getAllPosts', auth, getAllPosts)
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
