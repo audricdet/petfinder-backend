@@ -1,4 +1,4 @@
-import client from '../db/connect';
+import client from '../src/db/connect.mjs';
 
 const getAllPosts = async (request, response) => {
     try {
